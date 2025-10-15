@@ -1,6 +1,6 @@
 # ⚡ SparKing — מלך הניצוצות ✨
-ת
-<img width="1024" height="1536" alt="Regal Crown on Velvet Throne" src="https://github.com/user-attachments/assets/2654582a-dd21-4283-a63a-8267b1c95cee" />
+
+<img width="1024" height="1536" alt="Crown of Celestial Majesty" src="https://github.com/user-attachments/assets/6a3e7aec-5a6d-4222-aa02-1c86e47364cc" />
 
 
 ## 🪄 משמעות השם
