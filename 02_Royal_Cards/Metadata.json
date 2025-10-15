@@ -1,0 +1,168 @@
+{
+  "collection_name": "SparKing Royal Cards",
+  "version": "0.0.1",
+  "created_by": "AnLoMinus",
+  "creation_date": "2025-10-15",
+  "hebrew_date": "י״ג בתשרי תשפ״ו",
+  "total_cards": 0,
+  "planned_cards": 24,
+
+  "card_specifications": {
+    "dimensions": {
+      "width": "2.5 inches (63mm)",
+      "height": "3.5 inches (88mm)",
+      "format": "Standard poker card size"
+    },
+    "resolution": "300 DPI minimum",
+    "bleed": "3mm on all sides",
+    "color_mode": "CMYK for print, RGB for digital",
+    "file_formats": {
+      "working": "PSD (Photoshop)",
+      "vector": "AI (Illustrator)",
+      "print": "PDF",
+      "digital": "PNG (high-res)"
+    }
+  },
+
+  "card_structure": {
+    "required_elements": [
+      "Royal crown symbol",
+      "Central symbol/icon",
+      "Card title (Hebrew/English)",
+      "Inspirational quote (1-2 lines)",
+      "Decorative frame",
+      "Visual effects (glow/hologram)"
+    ],
+    "color_palette": [
+      "#FFD700 - Gold Royal",
+      "#0033A0 - Royal Blue",
+      "#000000 - Deep Black",
+      "#6A0DAD - Mystic Violet",
+      "#FFFFFF - Pearl White"
+    ]
+  },
+
+  "categories": [
+    {
+      "id": "inner_king",
+      "name": "Inner King",
+      "name_hebrew": "המלך הפנימי",
+      "description": "Cards focusing on personal sovereignty and self-leadership",
+      "planned_count": 8
+    },
+    {
+      "id": "wisdom",
+      "name": "Royal Wisdom",
+      "name_hebrew": "חכמה מלכותית",
+      "description": "Cards with deep wisdom and teachings",
+      "planned_count": 6
+    },
+    {
+      "id": "power",
+      "name": "Royal Power",
+      "name_hebrew": "עוצמה מלכותית",
+      "description": "Cards about inner strength and courage",
+      "planned_count": 5
+    },
+    {
+      "id": "spiritual",
+      "name": "Spiritual Majesty",
+      "name_hebrew": "הוד רוחני",
+      "description": "Cards with spiritual and mystical themes",
+      "planned_count": 5
+    }
+  ],
+
+  "cards": [
+    {
+      "id": "card_001",
+      "title": "The Inner King",
+      "title_hebrew": "המלך הפנימי",
+      "category": "inner_king",
+      "description": "Awakening to your inner sovereignty",
+      "quote": "You are the king of your soul's kingdom",
+      "quote_hebrew": "אתה המלך על ממלכת נשמתך",
+      "symbol": "Golden Crown",
+      "color_primary": "#FFD700",
+      "color_secondary": "#0033A0",
+      "status": "planned",
+      "created_date": null,
+      "file_name": null
+    },
+    {
+      "id": "card_002",
+      "title": "Crown of Wisdom",
+      "title_hebrew": "כתר החכמה",
+      "category": "wisdom",
+      "description": "The pursuit of knowledge and understanding",
+      "quote": "Wisdom is the crown that never fades",
+      "quote_hebrew": "החכמה היא הכתר שלעולם לא דועך",
+      "symbol": "Book with Crown",
+      "color_primary": "#FFD700",
+      "color_secondary": "#6A0DAD",
+      "status": "planned",
+      "created_date": null,
+      "file_name": null
+    },
+    {
+      "id": "card_003",
+      "title": "Royal Strength",
+      "title_hebrew": "עוצמה מלכותית",
+      "category": "power",
+      "description": "Inner power and determination",
+      "quote": "True strength comes from within",
+      "quote_hebrew": "עוצמה אמיתית באה מבפנים",
+      "symbol": "Sword and Shield",
+      "color_primary": "#FFD700",
+      "color_secondary": "#000000",
+      "status": "planned",
+      "created_date": null,
+      "file_name": null
+    },
+    {
+      "id": "card_004",
+      "title": "Leadership with Love",
+      "title_hebrew": "מנהיגות באהבה",
+      "category": "inner_king",
+      "description": "Leading with compassion and heart",
+      "quote": "The greatest kings lead with love",
+      "quote_hebrew": "המלכים הגדולים מובילים באהבה",
+      "symbol": "Heart with Crown",
+      "color_primary": "#FFD700",
+      "color_secondary": "#FFFFFF",
+      "status": "planned",
+      "created_date": null,
+      "file_name": null
+    },
+    {
+      "id": "card_005",
+      "title": "Vision and Purpose",
+      "title_hebrew": "חזון ויעוד",
+      "category": "wisdom",
+      "description": "Seeing beyond and living with purpose",
+      "quote": "A king without vision is a ship without a rudder",
+      "quote_hebrew": "מלך ללא חזון הוא ספינה ללא הגה",
+      "symbol": "Eye with Stars",
+      "color_primary": "#6A0DAD",
+      "color_secondary": "#FFD700",
+      "status": "planned",
+      "created_date": null,
+      "file_name": null
+    }
+  ],
+
+  "notes": [
+    "This is a foundational file for tracking card metadata",
+    "Each card should be updated with actual creation date and file name when completed",
+    "Status options: planned, in_progress, completed, published",
+    "All cards must follow the design guidelines in GRAPHIC_GUIDE_LINE.md",
+    "Maintain consistency across all cards in the collection"
+  ],
+
+  "future_series": [
+    "Royal Words - Inspirational quotes series",
+    "Mystic Crown - Mystical symbols series",
+    "Inner King - Personal development series",
+    "King Ritual - Ceremonial and spiritual practices"
+  ]
+}

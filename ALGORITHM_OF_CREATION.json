@@ -1,0 +1,178 @@
+{
+  "project_name": "SparKing",
+  "algorithm_version": "1.0.0",
+  "created_by": "AnLoMinus",
+  "creation_date": "2025-10-15",
+  "hebrew_date": "י״ג בתשרי תשפ״ו",
+
+  "philosophy": {
+    "core_concept": "בניית עולם מלכותי רב-ממדי המשלב רוחניות, אומנות וחכמה",
+    "vision": "כל אדם הוא מלך בממלכת נשמתו",
+    "mission": "להעצים את המלך הפנימי בכל אדם באמצעות כלים גרפיים, רוחניים ומעשיים"
+  },
+
+  "creation_steps": [
+    {
+      "step": 1,
+      "icon": "🪄",
+      "title": "הגדרת יסודות המושג KING",
+      "description": "חקר והגדרה של המושג המלכותי בממדים שונים",
+      "sub_tasks": [
+        "מחקר היסטורי של מלכים בעולם",
+        "לימוד מקורות מקראיים על מלכות",
+        "הגדרת ערכים מלכותיים בסיסיים",
+        "בניית מילון מושגים מלכותי",
+        "יצירת פילוסופיה מלכותית ייחודית"
+      ],
+      "output": ["מסמך יסודות רוחניים", "רשימת ערכים מלכותיים", "מילון מושגים"]
+    },
+    {
+      "step": 2,
+      "icon": "👑",
+      "title": "אפיון גרפי מלכותי",
+      "description": "פיתוח שפה ויזואלית מלכותית ייחודית",
+      "sub_tasks": [
+        "בחירת פלטת צבעים מלכותית",
+        "עיצוב סמלים בסיסיים (כתר, חרב, ארמון)",
+        "פיתוח סגנון טיפוגרפי",
+        "יצירת מסגרות ותבניות",
+        "הגדרת אפקטים ויזואליים (הילה, הולוגרמה)"
+      ],
+      "output": ["מדריך עיצוב גרפי", "ספריית סמלים", "תבניות גרפיות"]
+    },
+    {
+      "step": 3,
+      "icon": "⚔️",
+      "title": "בניית סט קלפים בסיסי",
+      "description": "יצירת 15-24 קלפים מלכותיים ראשונים",
+      "sub_tasks": [
+        "תכנון מבנה הקלף (כתר, טקסט, סמל, אנרגיה)",
+        "יצירת תבנית אחידה",
+        "עיצוב 5 קלפים ראשונים",
+        "הרחבה ל-15 קלפים",
+        "השלמה ל-24 קלפים (חבילה מלאה)"
+      ],
+      "output": ["תבניות PSD ו-AI", "סט קלפים בסיסי", "מטא-דאטה לכל קלף"]
+    },
+    {
+      "step": 4,
+      "icon": "🏰",
+      "title": "פיתוח תוכן רוחני ותרבותי",
+      "description": "העמקה בתוכן המלכותי והרוחני",
+      "sub_tasks": [
+        "כתיבת משפטי השראה מלכותיים",
+        "שילוב פסוקים וציטוטים",
+        "פיתוח סיפורים מלכותיים",
+        "יצירת מדיטציות והגיות",
+        "בניית מערכת טקסים"
+      ],
+      "output": ["ספר משפטי השראה", "מקורות רוחניים", "טקסים מלכותיים"]
+    },
+    {
+      "step": 5,
+      "icon": "🧭",
+      "title": "יצירת מאגר גרפי ומיתולוגיה",
+      "description": "בניית עולם מלא עם מיתוס פנימי",
+      "sub_tasks": [
+        "פיתוח סדרות נושאיות (Royal Words, Mystic Crown)",
+        "יצירת מיתולוגיה פנימית",
+        "בניית ספריית סמלים מורחבת",
+        "עיצוב לוגואים ומסגרות",
+        "יצירת אלמנטים דקורטיביים"
+      ],
+      "output": ["ספריית עיצוב מלאה", "מיתולוגיה מתועדת", "סדרות קלפים נוספות"]
+    },
+    {
+      "step": 6,
+      "icon": "🌐",
+      "title": "בניית אתר מקוון",
+      "description": "יצירת פלטפורמה דיגיטלית להצגת הפרויקט",
+      "sub_tasks": [
+        "תכנון מבנה האתר",
+        "עיצוב ממשק משתמש מלכותי",
+        "פיתוח HTML/CSS/JavaScript",
+        "שילוב גלריית קלפים",
+        "הוספת אנימציות ואינטראקציות"
+      ],
+      "output": ["אתר אינטרנט פעיל", "גלריה דיגיטלית", "חוויית משתמש מלכותית"]
+    },
+    {
+      "step": 7,
+      "icon": "🚀",
+      "title": "השקה רשמית והרחבות",
+      "description": "השקת הפרויקט והמשך פיתוח",
+      "sub_tasks": [
+        "הכנה להשקה (מסמכים, הדפסות)",
+        "יצירת טקס השקה מלכותי",
+        "שיתוף ברשתות חברתיות",
+        "איסוף משוב ושיפור",
+        "תכנון סדרות המשך"
+      ],
+      "output": ["אירוע השקה", "מוצרים מוגמרים", "תכנית הרחבה"]
+    }
+  ],
+
+  "quality_standards": {
+    "visual": {
+      "colors": ["#FFD700", "#0033A0", "#000000", "#6A0DAD", "#FFFFFF"],
+      "effects": ["golden_halo", "soft_hologram", "sparkling_particles"],
+      "typography": "serif_ancient_royal",
+      "frames": "crown_shaped_corners"
+    },
+    "content": {
+      "language": "elevated_royal_hebrew",
+      "tone": "inspiring_empowering_wise",
+      "structure": "hierarchical_organized_clear"
+    },
+    "spiritual": {
+      "depth": "mystical_profound",
+      "sources": ["tanach", "kabbalah", "chassidut", "wisdom_teachings"],
+      "purpose": "inner_transformation_and_empowerment"
+    }
+  },
+
+  "success_metrics": {
+    "phase_1": {
+      "cards_created": 24,
+      "symbols_designed": 10,
+      "content_pages": 15
+    },
+    "phase_2": {
+      "website_launched": true,
+      "digital_gallery": true,
+      "print_ready_files": true
+    },
+    "phase_3": {
+      "series_created": 3,
+      "rituals_documented": 5,
+      "community_engagement": "active"
+    }
+  },
+
+  "core_values": [
+    "👑 מלכות - הכרה בערך הפנימי",
+    "✨ חכמה - לימוד מתמיד וצמיחה",
+    "💎 יופי - אסתטיקה ואומנות ברמה גבוהה",
+    "🕊️ רוחניות - חיבור לנשמה ולמקורות עתיקים",
+    "⚔️ עוצמה - כוח פנימי ונחישות",
+    "🌟 השראה - העברת אור ותקווה",
+    "🏰 מורשת - שמירה על מסורת ומקורות"
+  ],
+
+  "maintenance": {
+    "version_control": "semantic_versioning",
+    "changelog_updates": "every_release",
+    "documentation": "continuous_improvement",
+    "community_feedback": "regular_integration"
+  },
+
+  "future_expansions": [
+    "🎴 King Tarot Deck - חפיסת טארוט מלכותית",
+    "📱 Mobile App - אפליקציה מלכותית",
+    "🎮 Interactive Game - משחק אינטראקטיבי",
+    "📚 Physical Book - ספר מודפס מהודר",
+    "🎨 Art Gallery - תערוכה פיזית",
+    "🎭 Royal Workshop - סדנאות והכשרות",
+    "🌍 International Versions - גרסאות בשפות נוספות"
+  ]
+}
