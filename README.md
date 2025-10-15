@@ -1,9 +1,11 @@
 # ⚡ SparKing — מלך הניצוצות ✨
 
-<img width="1024" height="1536" alt="Crown of Celestial Majesty" src="https://github.com/user-attachments/assets/6a3e7aec-5a6d-4222-aa02-1c86e47364cc" />
+
+<img width="1536" height="1024" alt="Regal Crown in Cosmic Majesty" src="https://github.com/user-attachments/assets/c9b5c0b9-137a-4f2e-9429-ba9ba0ccdf9e" />
 
 
-## 🪄 משמעות השם
+
+ 🪄 משמעות השם
 
 **SparKing** הוא שילוב בין שתי מילים:
 
