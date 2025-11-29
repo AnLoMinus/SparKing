@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>SparKing – SK · מלך הניצוצות</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SparKing – SK · מלך הניצוצות: מרכז קוסמי להצתת רעיונות, פרויקטים וקוד.">
+  <style>
+    /* ========== בסיס כללי ========== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e2840 0, #050710 50%, #02030a 100%);
+      color: #f5f5ff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== אפקט כוכבים ========== */
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: -50px;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(2px 2px at 80% 70%, rgba(125,211,252,0.9), transparent),
+        radial-gradient(1.5px 1.5px at 10% 80%, rgba(244,114,182,0.8), transparent),
+        radial-gradient(1.8px 1.8px at 70% 20%, rgba(190,242,100,0.8), transparent);
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    body::after {
+      filter: blur(2px);
+      opacity: 0.45;
+    }
+
+    /* ========== קונטיינר ראשי ========== */
+    .wrapper {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* ========== ניווט עליון ========== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to left, rgba(15,23,42,0.9), rgba(3,7,18,0.9));
+      border-bottom: 1px solid rgba(148,163,184,0.4);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.5rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-orb {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: conic-gradient(from 140deg, #22d3ee, #a855f7, #f97316, #22d3ee);
+      padding: 2px;
+      box-shadow:
+        0 0 12px rgba(56,189,248,0.7),
+        0 0 30px rgba(129,140,248,0.7);
+    }
+
+    .logo-orb-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #e0f2fe 0, #0f172a 60%, #020617 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-title-main {
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .nav-tagline {
+      font-size: 0.75rem;
+      color: #cbd5f5;
+      opacity: 0.9;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      font-size: 0.8rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      background: radial-gradient(circle at top, rgba(30,64,175,0.9), rgba(15,23,42,0.95));
+      box-shadow:
+        0 0 8px rgba(37,99,235,0.6),
+        0 0 18px rgba(59,130,246,0.4);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      box-shadow:
+        0 0 14px rgba(56,189,248,0.9),
+        0 0 32px rgba(129,140,248,0.8);
+      transform: translateY(-1px);
+      transition: all 0.18s ease-out;
+    }
+
+    /* ========== Hero ========== */
+    .hero {
+      padding-top: 1.75rem;
+      padding-bottom: 2.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-main-title {
+      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      text-shadow:
+        0 0 10px rgba(56,189,248,0.9),
+        0 0 28px rgba(129,140,248,0.9);
+    }
+
+    .hero-main-title span.spark {
+      background: linear-gradient(to left, #38bdf8, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #e5e7f5;
+      opacity: 0.95;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-subtitle-english {
+      font-size: 0.9rem;
+      color: #94a3b8;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.75rem;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 0.25rem 0.7rem;
+      border: 1px solid rgba(148,163,184,0.8);
+      background: linear-gradient(to left, rgba(15,23,42,0.9), rgba(30,64,175,0.9));
+      box-shadow: 0 0 9px rgba(37,99,235,0.7);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      border: 1px solid rgba(248,250,252,0.8);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top, #38bdf8, #0f172a);
+      box-shadow:
+        0 0 14px rgba(56,189,248,0.9),
+        0 0 30px rgba(129,140,248,0.8);
+      color: #020617;
+    }
+
+    .btn-primary span.icon {
+      font-size: 1rem;
+    }
+
+    .btn-secondary {
+      background: linear-gradient(to left, rgba(15,23,42,0.95), rgba(30,64,175,0.95));
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.8);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 0 10px rgba(56,189,248,0.8),
+        0 0 26px rgba(99,102,241,0.7);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    /* ========== Hero – קלף SparKing ========== */
+    .hero-card-outer {
+      justify-self: center;
+      width: 100%;
+      max-width: 360px;
+      perspective: 1400px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 1.5rem;
+      padding: 1.2rem;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(248,250,252,0.2), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(251,113,133,0.24), transparent 60%),
+        radial-gradient(circle at 0% 100%, rgba(52,211,153,0.18), transparent 50%),
+        linear-gradient(145deg, #020617, #020617 40%, #0f172a 80%);
+      box-shadow:
+        0 0 18px rgba(56,189,248,0.6),
+        0 0 36px rgba(129,140,248,0.7),
+        0 0 80px rgba(59,130,246,0.7);
+      border: 1px solid rgba(148,163,184,0.8);
+      transform: rotateY(-8deg) rotateX(6deg);
+      transform-style: preserve-3d;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.9;
+    }
+
+    .hero-card-chip {
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(251,191,36,0.9);
+      background: radial-gradient(circle at top, rgba(250,204,21,0.35), rgba(15,23,42,0.95));
+      font-weight: 600;
+      font-size: 0.7rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .hero-card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      margin-bottom: 0.65rem;
+    }
+
+    .hero-card-divider {
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(148,163,184,0.9), transparent);
+      margin: 0.6rem 0;
+    }
+
+    .hero-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.7rem;
+      color: #e5e7eb;
+      opacity: 0.9;
+    }
+
+    .hero-card-pill {
+      border-radius: 999px;
+      padding: 0.18rem 0.55rem;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: linear-gradient(to left, rgba(15,23,42,0.95), rgba(30,64,175,0.9));
+    }
+
+    .hero-card-footer {
+      margin-top: 0.95rem;
+      font-size: 0.72rem;
+      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      opacity: 0.95;
+    }
+
+    .hero-card-footer span.label {
+      color: #e5e7eb;
+    }
+
+    /* ========== מקטעים ========== */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title span.en {
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: #e5e7f5;
+      margin-bottom: 1rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      border-radius: 1rem;
+      padding: 1rem;
+      background: radial-gradient(circle at top, rgba(30,64,175,0.9), rgba(15,23,42,0.98));
+      border: 1px solid rgba(148,163,184,0.7);
+      box-shadow: 0 0 16px rgba(37,99,235,0.6);
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #e5e7f5;
+      margin-bottom: 0.4rem;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-right: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .card ul li::before {
+      content: "✦";
+      margin-left: 0.35rem;
+      color: #f97316;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid rgba(148,163,184,0.8);
+      background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(30,64,175,0.95));
+    }
+
+    /* ========== Roadmap ========== */
+    .roadmap {
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px solid rgba(148,163,184,0.7);
+      background: linear-gradient(145deg, rgba(15,23,42,0.98), rgba(30,64,175,0.9));
+      box-shadow:
+        0 0 18px rgba(59,130,246,0.7),
+        0 0 40px rgba(15,23,42,0.9);
+      font-size: 0.9rem;
+    }
+
+    .roadmap-list {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+
+    .roadmap-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+    }
+
+    .roadmap-step {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(251,191,36,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: radial-gradient(circle at top, rgba(250,204,21,0.35), rgba(15,23,42,0.95));
+      box-shadow: 0 0 14px rgba(250,204,21,0.7);
+    }
+
+    .roadmap-item + .roadmap-item {
+      border-top: 1px dashed rgba(148,163,184,0.65);
+    }
+
+    .roadmap-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .roadmap-item p {
+      font-size: 0.86rem;
+      color: #e5e7f5;
+    }
+
+    /* ========== אזור המנון / ראפ ========== */
+    .anthem {
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px solid rgba(248,250,252,0.7);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(56,189,248,0.18), transparent 55%),
+        radial-gradient(circle at 90% 100%, rgba(244,114,182,0.22), transparent 60%),
+        linear-gradient(145deg, #020617, #020617 40%, #0f172a 80%);
+      box-shadow:
+        0 0 18px rgba(56,189,248,0.9),
+        0 0 40px rgba(129,140,248,0.9);
+      font-size: 0.9rem;
+    }
+
+    .anthem pre {
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: #f9fafb;
+    }
+
+    /* ========== קרדיטים / פוטר ========== */
+    footer {
+      border-top: 1px solid rgba(148,163,184,0.4);
+      padding: 1rem 1.25rem 1.8rem;
+      background: radial-gradient(circle at bottom, rgba(15,23,42,0.95), rgba(3,7,18,0.98));
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .footer-section-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
+    }
+
+    .footer-meta {
+      font-size: 0.8rem;
+    }
+
+    .footer-meta p {
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-hashtags {
+      font-size: 0.77rem;
+      color: #cbd5f5;
+      margin-top: 0.4rem;
+      word-break: break-word;
+    }
+
+    .pasuk {
+      font-size: 0.88rem;
+      color: #e5e7eb;
+      margin-top: 0.5rem;
+    }
+
+    .pasuk span.ref {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    /* ========== רספונסיביות ========== */
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card-outer {
+        order: -1;
+      }
+
+      .footer-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .hero {
+        padding-top: 1.25rem;
+      }
+
+      .wrapper {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== ניווט עליון ===== -->
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="logo-orb">
+          <div class="logo-orb-inner">SK</div>
+        </div>
+        <div class="nav-title">
+          <div class="nav-title-main">
+            <span>⚡ SparKing</span>
+            <span>· SK</span>
+          </div>
+          <div class="nav-tagline">
+            מלך הניצוצות · Spark the King Within
+          </div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">על SparKing</a>
+        <a href="#pillars">עמודי כוח</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#anthem">המנון</a>
+        <a href="#credits">קרדיטים</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== תוכן ===== -->
+  <main class="wrapper">
+    <!-- === Hero === -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-main-title">
+          🌌 <span class="spark">SparKing</span> – מלך הניצוצות
+        </h1>
+        <p class="hero-subtitle">
+          מרכז קוסמי שמחבר בין אמונה, טכנולוגיה ויצירתיות.  
+          כל רעיון קטן הופך כאן ל<span class="spark">Spark</span> שמדליק מהפכה.
+        </p>
+        <p class="hero-subtitle-english">
+          SparKing – SK is your cosmic hub for turning tiny sparks into living systems:
+          cards, code, music, worlds and portals – all in one evolving universe.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">🚀 Creative Engine</div>
+          <div class="badge">🧠 Faith × Tech × Purpose</div>
+          <div class="badge">🎴 Cards · 🎵 Sound · 💻 Code</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#about">
+            <span class="icon">✨</span>
+            כניסה למציאות SparKing
+          </a>
+          <a class="btn btn-secondary" href="https://github.com/AnLoMinus/SparKing" target="_blank" rel="noopener">
+            💻 קפיצה למאגר GitHub
+          </a>
+        </div>
+
+        <p class="hero-note">
+          💬 כל פרויקט, כל מאגר, כל שורה – עוד ניצוץ קטן שמקרב את הבנייה של עולם מתוקן.
+        </p>
+      </div>
+
+      <!-- כרטיס SparKing Founder -->
+      <div class="hero-card-outer" aria-label="SparKing Founder Card – AnLoMinus">
+        <article class="hero-card">
+          <div class="hero-card-header">
+            <span>Founder Card · AnLoMinus</span>
+            <span class="hero-card-chip">⚡ SparKing Mode</span>
+          </div>
+          <div class="hero-card-title">
+            Leon Yaakobov · SparKing Leon
+          </div>
+          <div class="hero-card-sub">
+            Ultra Instinct of Sparks – Mind, Heart & Code aligned.
+          </div>
+
+          <div class="hero-card-divider"></div>
+
+          <div class="hero-card-meta">
+            <span class="hero-card-pill">🎴 Cards Architect</span>
+            <span class="hero-card-pill">🎵 SoundFlow Creator</span>
+            <span class="hero-card-pill">💻 RepoCraft Builder</span>
+            <span class="hero-card-pill">🕯 Faith-Driven Vision</span>
+          </div>
+
+          <div class="hero-card-footer">
+            <div>
+              <span class="label">Edition:</span> SparKing · SK-001
+            </div>
+            <div>
+              <span class="label">Mode:</span> Ascended Holographic
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- === על SparKing === -->
+    <section id="about">
+      <h2 class="section-title">
+        🔍 מה זה SparKing?
+        <span class="en">What is SparKing?</span>
+      </h2>
+      <p class="section-intro">
+        SparKing הוא ה"לב הקוסמי" של כל המאגרים, הקלפים, המסעות והעולמות שאתה בונה.  
+        כאן מוגדר ה־DNA של הניצוץ: איך רעיון נולד, איך הוא גדל, ואיך הוא נהיה מציאות חיה.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>🎯 מטרת־על – The Main Mission</h3>
+          <p>
+            ליצור פלטפורמה פנימית שבה כל מי שנכנס ל־SparKing מבין:  
+            <strong>יש לי ניצוץ, יש לי תפקיד, ואני יכול להדליק עוד לבבות בעולם.</strong>
+          </p>
+          <ul>
+            <li>לזקק חזון ברור לכל פרויקט – מה הוא משנה בעולם</li>
+            <li>לחבר אמונה עמוקה + טכנולוגיה חכמה + לב חי</li>
+            <li>לסדר את כל המאגרים תחת שפה אחת: Sparks, Portals, Flows</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">🧬 Vision DNA</span>
+            <span class="pill">💡 Idea → System</span>
+            <span class="pill">🔥 From Spark to World</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>🌐 SparKing כ־Meta Hub</h3>
+          <p>
+            SparKing משמש כ־Meta Hub שמארגן ומחבר בין כל המערכות שלך:
+            Exit the Matrix, LifePearls, SoundFlow, RepoCraft, HolyMap ועוד.
+          </p>
+          <ul>
+            <li>מפה אחת שמראה איפה כל מאגר יושב בתוך היקום</li>
+            <li>שפה אחידה: Sparks, Realms, Levels, Cards</li>
+            <li>קל יותר להיכנס מסיבוב חדש – "תתחיל מחדש" אבל חכם יותר</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">🧭 Meta Navigation</span>
+            <span class="pill">📂 GitHub Galaxy</span>
+            <span class="pill">🌀 Restart, Upgrade, Ascend</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- === עמודי כוח (Pillars) === -->
+    <section id="pillars">
+      <h2 class="section-title">
+        🏛 עמודי SparKing
+        <span class="en">SparKing Core Pillars</span>
+      </h2>
+      <p class="section-intro">
+        כל העולם של SparKing נשען על שלושה עמודים עיקריים – מוח, לב ומעשה.
+      </p>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>🧠 SparkMind</h3>
+          <p>
+            צד החשיבה, הפילוסופיה, המפות, הכוונות.  
+            כאן יושבים כל המסמכים, המודעות, הפסיכולוגיה הרוחנית והאלגוריתמים הפנימיים.
+          </p>
+          <ul>
+            <li>מפות כמו HolyMap, LifePearls, TorahClarity</li>
+            <li>תיקוני מידות, עבודת לב, מודעות יומיומית</li>
+            <li>הקשרים בין קבלה, חסידות, נפש ועולם המעשה</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>💻 SparkTech</h3>
+          <p>
+            המימוש הטכנולוגי: GitHub, קוד, אוטומציות, ממשקים, API’s.  
+            כל רעיון מקבל כלי – אתר, מאגר, אינטראקציה דיגיטלית.
+          </p>
+          <ul>
+            <li>RepoCraft – RC לתכנון כל מאגר</li>
+            <li>GitHub Pages לכל פרויקט מרכזי</li>
+            <li>אופטימיזציה למערכות AI, מוזיקה, גרפיקה וקוד</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>❤️ SparkTribe</h3>
+          <p>
+            הקהילה, המשפחה, החברים, התלמידים וכל מי שנוגע בניצוץ.  
+            כאן נכנסים השיתופים, הקבוצות, הבתים, המיזמים המשותפים.
+          </p>
+          <ul>
+            <li>LifePearls – חיזוקים ודרשות לבני הבית</li>
+            <li>DNA House, King Bike, SoundFlow Crew</li>
+            <li>לימוד, הנחיה וליווי נשמה־אל־נשמה</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🎴 SparkCards & Realms</h3>
+          <p>
+            הייצוג הגרפי: קלפים, שערים, פוסטרים, אלבומים, דמויות.  
+            כל רעיון מקבל צורה, צבע, אנרגיה ותדר.
+          </p>
+          <ul>
+            <li>Exit the Matrix – Ascended Holographic Edition</li>
+            <li>GuardMatrix, LifeGuard, רוח חדשה ועוד</li>
+            <li>Hero Images, Logos, Cosmic Posters</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Roadmap === -->
+    <section id="roadmap">
+      <h2 class="section-title">
+        🗺 Roadmap · מסלול התפתחות SparKing
+        <span class="en">From Spark to Kingdom</span>
+      </h2>
+      <div class="roadmap">
+        <p>
+          זהו תוואי דרך מוצע להתפתחות SparKing – תוכל לעדכן אותו ישירות בקוד לפי ההתקדמות:
+        </p>
+        <ul class="roadmap-list">
+          <li class="roadmap-item">
+            <div class="roadmap-step">01</div>
+            <div>
+              <h3>הגדרת Matrix של כל המאגרים</h3>
+              <p>
+                מיפוי כל המאגרים הקיימים (כמו LifePearls, Exit the Matrix, HolyMap ועוד) בטבלת Universe אחת
+                – מי שייך לאיזה עולם, לאיזה שלב, ולאיזה סוג (קלפים, אתר, אלבום וכו').
+              </p>
+            </div>
+          </li>
+          <li class="roadmap-item">
+            <div class="roadmap-step">02</div>
+            <div>
+              <h3>בניית SparKing Docs</h3>
+              <p>
+                יצירת תיקיית <code>/docs</code> עם מדריכים, מפות, תרשימים ותבניות קבועות:
+                איך בונים עוד מאגר חדש בסגנון SparKing בלי להמציא את הגלגל כל פעם מחדש.
+              </p>
+            </div>
+          </li>
+          <li class="roadmap-item">
+            <div class="roadmap-step">03</div>
+            <div>
+              <h3>חיבור לעולם המוזיקה והווידאו</h3>
+              <p>
+                הוספת מקטעי "Sound & Visuals": לינקים לאלבומים, טרקים, פוסטרים, תצוגת קלפים וגלריות,
+                כדי שכל מי שנכנס ירגיש את האנרגיה – לא רק יקרא עליה.
+              </p>
+            </div>
+          </li>
+          <li class="roadmap-item">
+            <div class="roadmap-step">04</div>
+            <div>
+              <h3>קהילה וקריאות לפעולה</h3>
+              <p>
+                בניית אזור "Join the Sparks": איך מצטרפים, איך תורמים, איך פותחים תת־מאגר,
+                ואיך משתלבים במערך SparKing בצורה בטוחה, שמחה ומוארת.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- === המנון / פזמון ראפ === -->
+    <section id="anthem">
+      <h2 class="section-title">
+        🎤 SparKing Anthem
+        <span class="en">Rap Chorus · SK</span>
+      </h2>
+      <p class="section-intro">
+        פזמון קצר בסגנון שלך – אפשר לשים כחתימה, כהשראה לשיר, או כהטבעה בקלף רשמי:
+      </p>
+      <div class="anthem">
+        <pre>
+Spark in my soul, I’m a king in the storm, ⚡
+Turning codes into light, every line is reborn. 🌌
+From the Matrix I rise with the truth that I bring, 🔓
+AnLoMinus SparKing – I ignite the inner King. 👑
+        </pre>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== פוטר / קרדיטים ===== -->
+  <footer id="credits">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-section-title">📜 קרדיטים & מטא־דאטה</div>
+        <div class="footer-meta">
+          <p>👑 פרויקט: SparKing – SK · מלך הניצוצות</p>
+          <p>👤 יוצר: AnLoMinus – Leon Yaakobov</p>
+          <p>💾 מאגר ראשי: <a href="https://github.com/AnLoMinus/SparKing" target="_blank" rel="noopener">github.com/AnLoMinus/SparKing</a></p>
+          <p>📅 תאריך לועזי: 29.11.2025</p>
+          <p>📅 תאריך עברי: ט' כסלו תשפ"ו</p>
+          <p>⏰ שעה (ישראל): 18:16</p>
+        </div>
+        <div class="footer-hashtags">
+          #SparKing #SparkKing #AnLoMinus #CreativeUniverse #ExitTheMatrix #LifePearls #SoundFlow #RepoCraft #HolyMap #CosmicCards
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-section-title">🕯 פסוק השראה</div>
+        <div class="pasuk">
+          "קוּמִי אוֹרִי כִּי בָא אוֹרֵךְ וּכְבוֹד ה' עָלַיִךְ זָרָח"
+          <span class="ref"> (ישעיהו ס', א')</span>
+        </div>
+        <p class="footer-meta" style="margin-top:0.5rem;">
+          🌟 SparKing מזכיר בכל רגע: האור כבר בפנים – כל מה שנשאר הוא להדליק אותו ולחלוק עם העולם.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
