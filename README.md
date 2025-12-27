@@ -160,6 +160,11 @@
 ├─ 🧰 INSTRUCTIONS.md                # הוראות הפקה
 ├─ 🪄 GRAPHIC_GUIDE_LINE.md          # מדריך גרפי
 │
+├─ 📂 06_3D_Game/                    # משחק דפדפן תלת־מימדי בשלוש גרסאות
+│   ├─ Version_01/                   # אב־טיפוס רץ בסיסי עם מחסומים וניקוד
+│   ├─ Version_02/                   # אספנים, קושי דינמי והשהייה
+│   └─ Version_03/                   # אויבים נעים, מצב פוקוס ואפקטים
+│
 ├─ 📂 01_Royal_Concepts/             # מושגים מלכותיים
 │   ├─ ✨ Mystical_Kingdom.md        # ממלכה מיסטית
 │   ├─ 🕎 Spiritual_King.md          # המלך הרוחני
@@ -203,6 +208,9 @@ git clone https://github.com/AnLoMinus/SparKing.git
 
 # מעבר לתיקייה
 cd SparKing
+
+# משחק הדפדפן התלת־מימדי
+open 06_3D_Game/Version_01/index.html
 
 # פתיחת האתר (אופציונלי)
 open 04_Website/index.html
