@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Crown Runner v0.2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/three@0.164.0/build/three.min.js"></script>
+</head>
+<body>
+  <div class="hud">
+    <div class="badge">Sky Crown Runner</div>
+    <div class="version">v0.2 — Crowns, Jump, & Reset</div>
+    <div class="stats">
+      <span id="score">Score: 0</span>
+      <span class="divider">•</span>
+      <span>WASD to move</span>
+      <span class="divider">•</span>
+      <span>Space to jump</span>
+      <span class="divider">•</span>
+      <span>R to reset</span>
+    </div>
+  </div>
+  <canvas id="scene"></canvas>
+  <script src="main.js"></script>
+</body>
+</html>

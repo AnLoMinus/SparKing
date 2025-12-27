@@ -1,0 +1,83 @@
+:root {
+  --gold: #ffd700;
+  --royal-blue: #0033a0;
+  --mystic-violet: #6a0dad;
+  --pearl-white: #ffffff;
+  --deep-black: #000000;
+  --crimson: #b00020;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Play', system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.05), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba(106, 13, 173, 0.08), transparent 40%),
+              linear-gradient(135deg, #020b26, #041746 60%, #0a1f63);
+  color: var(--pearl-white);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#scene {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hud {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--pearl-white);
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
+  z-index: 2;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: rgba(0, 17, 52, 0.35);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  backdrop-filter: blur(10px);
+}
+
+.badge {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 215, 0, 0.75), rgba(106, 13, 173, 0.55));
+  color: var(--deep-black);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
+}
+
+.version {
+  margin-top: 8px;
+  opacity: 0.9;
+  font-size: 0.96rem;
+}
+
+.stats {
+  margin-top: 8px;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.divider {
+  opacity: 0.6;
+}
+
+#score {
+  color: var(--gold);
+  font-weight: 700;
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.45);
+}
