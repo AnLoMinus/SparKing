@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal 3D Realm — Crystal Guard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hud">
+        <div class="hud__group">
+          <p class="eyebrow">Royal 3D Realm</p>
+          <h1 class="title">Crystal Guard</h1>
+          <p class="subtitle">
+            דש/מגן, איסוף קריסטלים והאצת קושי דינמית — עדיין ללא ספריות.
+          </p>
+        </div>
+        <div class="hud__group hud__stats">
+          <div class="stat">
+            <span class="label">Score</span>
+            <span id="score" class="value">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Best</span>
+            <span id="best" class="value">0</span>
+          </div>
+          <div class="stat">
+            <span class="label">Crystals</span>
+            <span id="crystals" class="value">0</span>
+          </div>
+        </div>
+        <div class="hud__group hud__controls">
+          <p><strong>Controls</strong></p>
+          <p>⬅️ ➡️ / A D — מעבר נתיב</p>
+          <p>Space — Dash / Shield</p>
+          <p>Enter — התחלה מחדש</p>
+        </div>
+        <div class="hud__group hud__energy">
+          <p class="label">Shield Energy</p>
+          <div class="energy-bar">
+            <div id="energyFill" class="energy-bar__fill"></div>
+          </div>
+          <p class="energy__hint">ממלאים ע"י איסוף קריסטלים</p>
+        </div>
+      </header>
+
+      <section class="scene" id="scene">
+        <div class="scene__stars"></div>
+        <div class="ground">
+          <div class="lane lane--left"></div>
+          <div class="lane lane--center"></div>
+          <div class="lane lane--right"></div>
+        </div>
+        <div class="world" id="world">
+          <div class="runner" id="runner"></div>
+        </div>
+        <div id="flash" class="flash hidden"></div>
+        <div class="glow" id="glow"></div>
+        <div id="banner" class="banner">
+          <p class="banner__eyebrow">Press Enter</p>
+          <p class="banner__title">Guard the crown</p>
+          <p class="banner__meta">הימנע ממכשולים, אסוף קריסטלים והפעל מגן בזמן.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
