@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sky Crown Runner v0.3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/three@0.164.0/build/three.min.js"></script>
+</head>
+<body>
+  <div class="hud">
+    <div class="badge">Sky Crown Runner</div>
+    <div class="version">v0.3 — Hazards, Timer & Finish</div>
+    <div class="stats">
+      <span id="score">Score: 0 / 120</span>
+      <span class="divider">•</span>
+      <span id="timer">Time: 60.0s</span>
+      <span class="divider">•</span>
+      <span>WASD move</span>
+      <span class="divider">•</span>
+      <span>Space jump</span>
+      <span class="divider">•</span>
+      <span>R restart</span>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-card">
+      <div class="overlay-title" id="overlay-title">Run Complete</div>
+      <p id="overlay-subtitle">Camera unlocked — orbit to inspect the scene.</p>
+      <button id="restart">Restart Run</button>
+    </div>
+  </div>
+
+  <canvas id="scene"></canvas>
+  <script src="main.js"></script>
+</body>
+</html>
