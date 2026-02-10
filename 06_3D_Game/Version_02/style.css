@@ -1,0 +1,114 @@
+:root {
+  --royal-blue: #041341;
+  --gold: #ffd700;
+  --violet: #8e2de2;
+  --deep-black: #04060f;
+  --pearl: #f7f8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: "Segoe UI", "Assistant", sans-serif;
+  background: radial-gradient(circle at 25% 20%, rgba(255, 215, 0, 0.12), transparent 40%),
+              radial-gradient(circle at 80% 10%, rgba(142, 45, 226, 0.18), transparent 45%),
+              linear-gradient(135deg, #050813 0%, #030514 60%, #060c1f 100%);
+  color: var(--pearl);
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.ui-panel {
+  position: fixed;
+  top: 14px;
+  left: 16px;
+  right: 16px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  background: rgba(4, 19, 65, 0.74);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+  border-radius: 14px;
+  backdrop-filter: blur(7px);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  margin-bottom: 8px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 15px;
+}
+
+.bars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bars label {
+  font-size: 13px;
+  color: rgba(247, 248, 255, 0.9);
+}
+
+.bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 4px;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+}
+
+.bar div {
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(90deg, var(--violet), var(--gold));
+  transition: width 0.12s ease;
+}
+
+.controls {
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(247, 248, 255, 0.82);
+}
+
+#resetButton {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--gold), #ff9d00);
+  color: #0b0b14;
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255, 215, 0, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#resetButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(255, 215, 0, 0.45);
+}
+
+#resetButton:active {
+  transform: translateY(1px);
+}
